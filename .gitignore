@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+**/*.pyc
+
+# Virtual Environments
+.venv/
+*/.venv/
+**/.venv/
+venv/
+*/venv/
+**/venv/
+env/
+*/env/
+**/env/
+
+# Large Compressed Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+*.log

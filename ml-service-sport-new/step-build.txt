@@ -1,0 +1,15 @@
+### BUILD ###
+docker build -t prenava-ml-service .
+
+### TRAINING DATA ###
+docker run --rm \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/artifacts:/app/artifacts \
+  prenava-ml-service \
+  python -m ml.train
+
+### RUN AT PORT 8080 ###
+docker run --rm -p 8080:8000 \
+  -v $(pwd)/artifacts:/app/artifacts \
+  -v $(pwd)/configs:/app/configs \
+  prenava-ml-service

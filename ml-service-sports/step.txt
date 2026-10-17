@@ -1,0 +1,56 @@
+#if mac //1
+python3 -m venv venv
+source venv/bin/activate 
+
+#if Windows
+python -m venv venv
+venv\Scripts\Activate.ps1
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Train the model
+python train_risk.py
+
+# Run API //2
+uvicorn app:app --host 0.0.0.0 --port 8085
+
+# Hit Endpoint
+GET http://localhost:8085/healthz
+
+curl -X POST http://localhost:8085/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "age": 28,
+    "gestational_age_weeks": 20,
+    "bmi": 26.8,
+    "blood_pressure_systolic": 120,
+    "blood_pressure_diastolic": 80,
+    "blood_sugar": 100,
+    "body_temp": 36.8,
+    "heart_rate": 85,
+    "previous_complications": false,
+    "preexisting_diabetes": false,
+    "gestational_diabetes": false,
+    "mental_health_issue": false,
+    "placenta_position_restriction": false,
+    "low_impact_pref": true,
+    "water_access": true,
+    "back_pain": false
+  }'
+
+# Run With Docker
+docker build -t ml-service-sports .
+
+docker run --rm -p 8080:8080 \
+  -v $(pwd)/risk_model.pkl:/app/risk_model.pkl \
+  -v $(pwd)/rules.yml:/app/rules.yml \
+  ml-service-sports
+
+
+#docker
+docker build -t prenava-ml-sport:latest .
+
+docker images | grep prenava-ml-sport
+
+docker run --rm -p 8080:8080 prenava-ml-sport:latest

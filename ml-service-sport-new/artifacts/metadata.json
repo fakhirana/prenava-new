@@ -1,0 +1,67 @@
+{
+  "model_name": "RandomForestClassifier",
+  "model_version": "rf_v2",
+  "features": [
+    "age",
+    "systolic_bp",
+    "diastolic_bp",
+    "blood_sugar",
+    "body_temp",
+    "bmi",
+    "previous_complications",
+    "preexisting_diabetes",
+    "gestational_diabetes",
+    "mental_health_issue",
+    "heart_rate"
+  ],
+  "label_mapping": {
+    "0": "low",
+    "1": "high"
+  },
+  "best_params": {
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_split": 2,
+    "min_samples_leaf": 1
+  },
+  "metrics": {
+    "test_accuracy": 0.991597,
+    "test_f1_score": 0.989474,
+    "test_auc": 0.999411,
+    "cv_mean_accuracy": 0.985246,
+    "cv_std_accuracy": 0.006985
+  },
+  "confusion_matrix": {
+    "tn": 142,
+    "fp": 1,
+    "fn": 1,
+    "tp": 94
+  },
+  "classification_report": {
+    "low": {
+      "precision": 0.993006993006993,
+      "recall": 0.993006993006993,
+      "f1-score": 0.993006993006993,
+      "support": 143.0
+    },
+    "high": {
+      "precision": 0.9894736842105263,
+      "recall": 0.9894736842105263,
+      "f1-score": 0.9894736842105263,
+      "support": 95.0
+    },
+    "accuracy": 0.9915966386554622,
+    "macro avg": {
+      "precision": 0.9912403386087596,
+      "recall": 0.9912403386087596,
+      "f1-score": 0.9912403386087596,
+      "support": 238.0
+    },
+    "weighted avg": {
+      "precision": 0.9915966386554622,
+      "recall": 0.9915966386554622,
+      "f1-score": 0.9915966386554622,
+      "support": 238.0
+    }
+  }
+}

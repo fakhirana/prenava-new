@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ml-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml-anemia-api
+    ports:
+      # Map host port 9001 to container port 8000
+      - "9001:8000"
+    restart: unless-stopped
+    # volumes:
+      # Uncomment the line below if you want to map the model from host to container directly
+      # to update it without rebuilding the image
+      # - ./best_model_final.keras:/app/best_model_final.keras

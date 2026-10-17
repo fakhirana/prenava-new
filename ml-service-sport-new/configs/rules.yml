@@ -1,0 +1,186 @@
+activities:
+- code: back_stretch_routine
+  name: Peregangan Punggung
+  category: flexibility
+- code: basketball
+  name: Basket
+  category: sport
+- code: bird_dog_modified
+  name: Gerakan Bird Dog
+  category: mobility
+- code: breathing_exercises
+  name: Latihan Pernapasan
+  category: breathing
+- code: brisk_walking
+  name: Jalan Cepat
+  category: cardio
+- code: casual_cycling
+  name: Bersepeda Santai
+  category: cardio
+- code: cat_cow_modified
+  name: Gerakan Cat-Cow
+  category: mobility
+- code: chair_yoga
+  name: Yoga Duduk
+  category: flexibility
+- code: competitive_badminton
+  name: Badminton Kompetitif
+  category: sport
+- code: evening_walk
+  name: Jalan Sore
+  category: cardio
+- code: futsal
+  name: Futsal
+  category: sport
+- code: heavy_weightlifting
+  name: Angkat Beban Berat
+  category: strength
+- code: jogging
+  name: Jogging
+  category: cardio
+- code: jump_rope
+  name: Lompat Tali
+  category: cardio
+- code: kegel
+  name: Senam Kegel
+  category: pelvic_floor
+- code: leg_stretch_routine
+  name: Peregangan Kaki
+  category: flexibility
+- code: light_dance
+  name: Tari Ringan
+  category: cardio
+- code: low_impact_aerobics
+  name: Senam Low Impact
+  category: cardio
+- code: low_impact_zumba
+  name: Zumba Ringan
+  category: cardio
+- code: martial_arts
+  name: Bela Diri
+  category: sport
+- code: mobility_flow
+  name: Latihan Mobilitas
+  category: mobility
+- code: morning_walk
+  name: Jalan Pagi
+  category: cardio
+- code: pelvic_tilt
+  name: Latihan Panggul
+  category: mobility
+- code: prenatal_exercise
+  name: Senam Hamil
+  category: prenatal
+- code: prenatal_pilates
+  name: Pilates Hamil
+  category: core
+- code: prenatal_yoga
+  name: Yoga Hamil
+  category: flexibility
+- code: resistance_band_light
+  name: Latihan Resistance Band Ringan
+  category: strength
+- code: running
+  name: Lari
+  category: cardio
+- code: seated_upper_body
+  name: Latihan Tubuh Bagian Atas Duduk
+  category: strength
+- code: side_leg_raise
+  name: Angkat Kaki Samping
+  category: strength
+- code: soccer
+  name: Sepak Bola
+  category: sport
+- code: stationary_cycling
+  name: Sepeda Statis
+  category: cardio
+- code: stretching
+  name: Peregangan
+  category: flexibility
+- code: supported_squats
+  name: Squat dengan Bantuan
+  category: strength
+- code: swimming
+  name: Berenang
+  category: aquatic
+- code: treadmill_walking
+  name: Jalan di Treadmill
+  category: cardio
+- code: volleyball
+  name: Voli
+  category: sport
+- code: wall_pushups
+  name: Push-Up Dinding
+  category: strength
+- code: water_aerobics
+  name: Senam Air
+  category: aquatic
+rules:
+  high_risk:
+    highly_recommended:
+    - breathing_exercises
+    - chair_yoga
+    - kegel
+    - stretching
+    allowed_with_caution:
+    - mobility_flow
+    - pelvic_tilt
+    - prenatal_exercise
+    - resistance_band_light
+    - seated_upper_body
+    avoid:
+    - basketball
+    - bird_dog_modified
+    - brisk_walking
+    - casual_cycling
+    - cat_cow_modified
+    - competitive_badminton
+    - futsal
+    - heavy_weightlifting
+    - jogging
+    - jump_rope
+    - martial_arts
+    - running
+    - soccer
+    - stationary_cycling
+    - supported_squats
+    - swimming
+    - volleyball
+    - water_aerobics
+  low_risk:
+    highly_recommended:
+    - breathing_exercises
+    - cat_cow_modified
+    - kegel
+    - low_impact_aerobics
+    - mobility_flow
+    - morning_walk
+    - pelvic_tilt
+    - prenatal_exercise
+    - prenatal_yoga
+    - resistance_band_light
+    - seated_upper_body
+    - side_leg_raise
+    - stretching
+    - supported_squats
+    - wall_pushups
+    allowed_with_caution:
+    - brisk_walking
+    - casual_cycling
+    - light_dance
+    - low_impact_zumba
+    - swimming
+    - treadmill_walking
+    - water_aerobics
+    avoid:
+    - basketball
+    - competitive_badminton
+    - futsal
+    - heavy_weightlifting
+    - jogging
+    - jump_rope
+    - martial_arts
+    - running
+    - soccer
+    - volleyball

@@ -1,0 +1,9 @@
+services:
+  ml-stunting:
+    build: .
+    container_name: prenava-ml-stunting
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    restart: unless-stopped
