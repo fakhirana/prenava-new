@@ -33,11 +33,14 @@ def main():
     print(f"Base Weights : {args.weights}")
 
     # 2. Inisialisasi Pretrained Model YOLOv8-Nano
-    model = YOLO(args.weights)
+    data_path = str(Path(args.data).resolve())
+    weights_path = str(Path(args.weights).resolve()) if Path(args.weights).exists() else args.weights
+
+    model = YOLO(weights_path)
 
     # 3. Jalankan Pelatihan
     results = model.train(
-        data=args.data,
+        data=data_path,
         epochs=args.epochs,
         imgsz=args.imgsz,
         batch=args.batch,
