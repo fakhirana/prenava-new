@@ -21,8 +21,14 @@ prenava-new/
 │   ├── artifacts/                # Model artifacts (.pkl & .joblib)
 │   └── tests/                    # Unit test keamanan medis komprehensif
 │
-├── ml-anemia/                    # [PROD] Layanan Deteksi Anemia Maternal Konjungtiva Mata
-│   ├── main.py                   # API Server deteksi anemia
+├── ml-service-food/              # [PROD] Layanan Food Scanner & Nutrisi 'Isi Piringku' (FastAPI, Port 9002)
+│   ├── app/                      # Arsitektur modular FastAPI (API, Services, Schemas)
+│   ├── app/services/             # YOLOv8 Detector & FoodAnalyzer (Kemenkes & Heme-Iron Check)
+│   ├── ml/                       # Pipeline training YOLOv8-Nano (train.py)
+│   └── tests/                    # Unit & API integration tests
+│
+├── ml-anemia/                    # [PROD] Layanan Deteksi Anemia Maternal Konjungtiva Mata (Port 9001)
+│   ├── main.py                   # API Server deteksi anemia MobileNetV2
 │   ├── best_model_final.keras    # Model deep learning anemia
 │   └── Dockerfile & compose      # Containerization deployment
 │
@@ -49,9 +55,16 @@ prenava-new/
   - **Layer 2 (Trimester Safety Rules):** Filter biomekanik trimester (larangan posisi terlentang/supine pasca minggu ke-16, latihan mobilitas panggul di Trimester 3).
   - **Layer 3 (Live Backend Sync):** Sinkronisasi otomatis aturan olahraga dengan backend Prenava.
 
-### 3. Deteksi Anemia Kehamilan (`ml-anemia`)
-- **Framework:** FastAPI / TensorFlow Keras (Port 8000)
-- **Model:** Deep Learning CNN untuk klasifikasi anemia berdasarkan citra konjungtiva mata.
+### 3. Food Scanner & Verifikasi Nutrisi "Isi Piringku" (`ml-service-food`)
+- **Framework:** FastAPI (Port 9002)
+- **Model:** YOLOv8-Nano Object Detection (5 Kelas Target Makanan Nusantara)
+- **Sistem Keamanan & Evaluasi Gizi:**
+  - **Estimasi Proporsi Permukaan:** Kalkulasi luas relatif bounding box terhadap standar piring Kemenkes RI (1/3 Karbo, 1/3 Sayur, 1/6 Protein, 1/6 Buah).
+  - **Heme-Iron Deficiency Check:** Peringatan otomatis risiko anemia jika piring tidak mengandung protein hewani kaya zat besi.
+
+### 4. Deteksi Anemia Kehamilan (`ml-anemia`)
+- **Framework:** FastAPI / TensorFlow Keras (Port 9001)
+- **Model:** Deep Learning CNN MobileNetV2 untuk klasifikasi anemia berdasarkan citra konjungtiva mata.
 
 ---
 

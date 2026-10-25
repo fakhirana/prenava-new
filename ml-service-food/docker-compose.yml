@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ml-service-food:
+    build: .
+    container_name: prenava-ml-service-food
+    restart: always
+    ports:
+      - "9002:9002"
+    environment:
+      - PORT=9002
+      - HOST=0.0.0.0
+    volumes:
+      - ./models:/app/models
