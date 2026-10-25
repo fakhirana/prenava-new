@@ -1,0 +1,19 @@
+# Ultralytics YOLOv8 Dataset Configuration
+# Proyek: Prenava AI - Deteksi Nutrisi 'Isi Piringku Ibu Hamil' Kemenkes RI
+# Tanggung Jawab: Individu 3 (Deep Learning & Computer Vision Specialist)
+
+path: dataset_isi_piringku  # path direktori root dataset
+train: train/images         # direktori gambar training (70%)
+val: valid/images           # direktori gambar validasi (20%)
+test: test/images           # direktori gambar testing (10%)
+
+# Jumlah Kelas
+nc: 5
+
+# Daftar Nama Kelas Target Kemenkes RI
+names:
+  0: karbohidrat
+  1: protein_hewani
+  2: protein_nabati
+  3: sayuran
+  4: buah
